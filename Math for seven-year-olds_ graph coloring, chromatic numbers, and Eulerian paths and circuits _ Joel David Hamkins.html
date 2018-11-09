@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/ -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>Math for seven-year-olds:  graph coloring, chromatic numbers, and Eulerian paths and circuits | Joel David Hamkins</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/style(1).css">
+<link rel="pingback" href="http://jdh.hamkins.org/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://jdh.hamkins.org/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<script id="twitter-wjs" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/widgets.js"></script><script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});
+</script>
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="http://s.gravatar.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Joel David Hamkins » Feed" href="http://jdh.hamkins.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="Joel David Hamkins » Comments Feed" href="http://jdh.hamkins.org/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Joel David Hamkins » Math for seven-year-olds:  graph coloring, chromatic numbers, and Eulerian paths and circuits Comments Feed" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/jdh.hamkins.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/wp-emoji-release.min(1).js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="papercite_css-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/papercite.css" type="text/css" media="all">
+<link rel="stylesheet" id="cws-google-picasa-pro-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/cws-google-picasa-pro-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="lightbox-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/lightbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-post-listing-styles-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/simple-post-listing-styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-upcoming-styles-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/simple-upcoming-styles.css" type="text/css" media="all">
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/jquery.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/papercite.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/cws-google-picasa-pro-public.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/MathJax.js"></script>
+<script type="text/javascript" async="" defer="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/platform.js" gapi_processed="true"></script>
+<link rel="https://api.w.org/" href="http://jdh.hamkins.org/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://jdh.hamkins.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://jdh.hamkins.org/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Uniform $({\lt}\theta)$-supercompactness is equivalent to a coherent system of normal fine measures" href="http://jdh.hamkins.org/uniform-supercompactness-equivalent-to-coherent-system-of-normal-fine-measures/">
+<link rel="next" title="On sabbatical, CUNY Fellowship Leave, academic year 2014 – 2015" href="http://jdh.hamkins.org/sabbatical-leave-2014-2015/">
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="canonical" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/">
+<link rel="shortlink" href="http://wp.me/p5M0LV-Kh">
+<link rel="alternate" type="application/json+oembed" href="http://jdh.hamkins.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fjdh.hamkins.org%2Fmath-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://jdh.hamkins.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fjdh.hamkins.org%2Fmath-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths%2F&amp;format=xml">
+<link rel="shortcut icon" href="http://jdh.hamkins.org/wp-content/uploads/2015/04/Infinity.gif"><link rel="apple-touch-icon" sizes="57x57" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/manifest.json">
+<link rel="shortcut icon" href="http://jdh.hamkins.org/wp-content/uploads/fbrfg/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/fbrfg/mstile-144x144.png">
+<meta name="msapplication-config" content="/wp-content/uploads/fbrfg/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s1.wp.com/">
+<link rel="dns-prefetch" href="http://s2.wp.com/">
+<link rel="dns-prefetch" href="http://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="http://0.gravatar.com/">
+<link rel="dns-prefetch" href="http://1.gravatar.com/">
+<link rel="dns-prefetch" href="http://2.gravatar.com/">
+<style type="text/css">img#wpstats{display:none}</style>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #68a56e; }
+</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Math for seven-year-olds:  graph coloring, chromatic numbers, and Eulerian paths and circuits">
+<meta property="og:url" content="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/">
+<meta property="og:description" content="As a guest today in my daughter’s second-grade classroom, full of math-enthusiastic seven-and-eight-year-old girls, I led a mathematical investigation of graph coloring, chromatic numbers, ma…">
+<meta property="article:published_time" content="2014-05-30T01:13:50+00:00">
+<meta property="article:modified_time" content="2015-03-04T12:18:18+00:00">
+<meta property="og:site_name" content="Joel David Hamkins">
+<meta property="og:image" content="http://jdh.hamkins.org/wp-content/uploads/2015/03/A-Mathematicians-Year-in-Japan-644x1024.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+			<style type="text/css" id="wp-custom-css">
+				/*
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+*/
+#site-generator {
+	display: none;
+}
+
+/*
+ * papercite stuff
+*/
+ul.papercite_bibliography {
+	list-style: none;
+	margin-left: 0;
+}
+
+.papercite_link_list {
+	display: inline-block;
+}
+
+.papercite_link {
+	padding-right: 10px;
+}
+
+.papercite_link + .papercite_link {
+	border-left: 1px solid gray;
+	padding-left: 10px;
+}
+
+.papercite_title {
+	display: none;
+}
+
+.papercite_toggle:link, .papercite_toggle:visited, .papercite_link, .papercite_link:link, .papercite_link:visited {
+	color: #e4741f;
+}			</style>
+		<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/hovercard.min(1).css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/services.min(1).css"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="post-template-default single single-post postid-2869 single-format-standard custom-background single-author singular two-column left-sidebar"><div id="MathJax_Message" style="display: none;"></div>
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://jdh.hamkins.org/" rel="home">Joel David Hamkins</a></span></h1>
+				<h2 id="site-description">mathematics and philosophy of the infinite</h2>
+			</hgroup>
+
+						<a href="http://jdh.hamkins.org/">
+									<img src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/JDH-at-YSTW.jpg" width="1000" height="288" alt="Joel David Hamkins">
+							</a>
+			
+								<form method="get" id="searchform" action="http://jdh.hamkins.org/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#content">Skip to primary content</a></div>
+												<div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-post-parent menu-item-has-children menu-item-5"><a href="http://jdh.hamkins.org/">Home</a>
+<ul class="sub-menu">
+	<li id="menu-item-3478" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-3478"><a href="http://jdh.hamkins.org/about/">About</a></li>
+	<li id="menu-item-6622" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6622"><a href="http://jdh.hamkins.org/wp-content/uploads/2018/05/CV-Hamkins.pdf">My Curriculum Vita</a></li>
+	<li id="menu-item-3489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3489"><a href="http://jdh.hamkins.org/contact/">Contact</a></li>
+	<li id="menu-item-3791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3791"><a href="http://jdh.hamkins.org/comment-board/">Comment Board</a></li>
+</ul>
+</li>
+<li id="menu-item-3479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3479"><a href="http://jdh.hamkins.org/publications/">Publications</a>
+<ul class="sub-menu">
+	<li id="menu-item-3486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3486"><a href="http://jdh.hamkins.org/publications/">Publication list</a></li>
+	<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="http://jdh.hamkins.org/category/publications/">Recent publications</a></li>
+	<li id="menu-item-3484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3484"><a href="http://jdh.hamkins.org/publications-by-topic/">Publications by topic</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3480"><a href="http://jdh.hamkins.org/automorphism-tower-publications/">Automorphism towers</a></li>
+		<li id="menu-item-3483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3483"><a href="http://jdh.hamkins.org/infinitary-computability-publications/">Infinitary computability</a></li>
+		<li id="menu-item-3485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3485"><a href="http://jdh.hamkins.org/infinitary-utilitarianism/">Infinitary utilitarianism</a></li>
+		<li id="menu-item-3482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3482"><a href="http://jdh.hamkins.org/large-cardinal-publications/">Large cardinals</a></li>
+		<li id="menu-item-3481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3481"><a href="http://jdh.hamkins.org/the-set-theoretic-multiverse/">The set-theoretic multiverse</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1490" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1490"><a href="http://jdh.hamkins.org/collaborators/">My Research Collaborators</a></li>
+</ul>
+</li>
+<li id="menu-item-6" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6"><a href="http://jdh.hamkins.org/category/talks/">Talks</a>
+<ul class="sub-menu">
+	<li id="menu-item-3487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3487"><a title="A list of all my conference and colloquium talks" href="http://jdh.hamkins.org/talk-list/">Talks</a></li>
+	<li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a title="About my recent and upcoming talks" href="http://jdh.hamkins.org/category/talks/">Recent and Upcoming Talks</a></li>
+</ul>
+</li>
+<li id="menu-item-4451" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4451"><a href="http://jdh.hamkins.org/category/appointments/">Appointments and Grants</a>
+<ul class="sub-menu">
+	<li id="menu-item-4452" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-4452"><a href="http://jdh.hamkins.org/about/">About Me</a></li>
+	<li id="menu-item-1488" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1488"><a href="http://jdh.hamkins.org/category/appointments/">My Academic Appointments</a></li>
+	<li id="menu-item-1487" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1487"><a href="http://jdh.hamkins.org/category/grants-and-awards/">Grants and Awards</a></li>
+</ul>
+</li>
+<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-10"><a href="http://jdh.hamkins.org/category/teaching/">Teaching</a>
+<ul class="sub-menu">
+	<li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="http://jdh.hamkins.org/category/teaching/">About My Courses</a></li>
+</ul>
+</li>
+<li id="menu-item-4457" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4457"><a href="http://jdh.hamkins.org/category/students/">Students</a>
+<ul class="sub-menu">
+	<li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="http://jdh.hamkins.org/category/students/">About My Graduate Students</a></li>
+	<li id="menu-item-3488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3488"><a href="http://jdh.hamkins.org/students/">List of My Graduate Students</a></li>
+</ul>
+</li>
+<li id="menu-item-4449" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-4449"><a title="Short but interesting mathematical exposition here on my blog" href="http://jdh.hamkins.org/category/exposition/">Mathematical Shorts</a></li>
+<li id="menu-item-1489" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1489"><a title="Fun mathematical posts suitable for kids!" href="http://jdh.hamkins.org/category/math-for-kids/">Math for Kids</a></li>
+</ul></div>			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://jdh.hamkins.org/uniform-supercompactness-equivalent-to-coherent-system-of-normal-fine-measures/" rel="prev"><span class="meta-nav">←</span> Previous</a></span>
+						<span class="nav-next"><a href="http://jdh.hamkins.org/sabbatical-leave-2014-2015/" rel="next">Next <span class="meta-nav">→</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-2869" class="post-2869 post type-post status-publish format-standard hentry category-exposition category-math-for-kids tag-bridges-of-konigsberg tag-eulerian-circuits tag-eulerian-paths tag-graph-coloring tag-graph-theory tag-kids tag-map-coloring">
+	<header class="entry-header">
+		<h1 class="entry-title">Math for seven-year-olds:  graph coloring, chromatic numbers, and Eulerian paths and circuits</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/" title="9:13 pm" rel="bookmark"><time class="entry-date" datetime="2014-05-29T21:13:50+00:00">May 29, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://jdh.hamkins.org/author/hamkins/" title="View all posts by Joel David Hamkins" rel="author">Joel David Hamkins</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-11.jpg"><img class="alignright wp-image-2923" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-11-214x300.jpg" alt="Image (11)" width="156" height="215"></a>As a guest today in my daughter’s second-grade classroom, full of math-enthusiastic seven-and-eight-year-old girls, I led a mathematical investigation of graph coloring, chromatic numbers, map coloring and Eulerian paths and circuits. I brought in a pile of sample graphs I had prepared, and all the girls made up their own graphs and maps to challenge each other. By the&nbsp;end each child had compiled a mathematical “coloring book” containing the results of their explorations. &nbsp;Let me tell you a little about what we did.</p>
+<p>We began with vertex coloring, where one colors the vertices of a graph in such a way that adjacent vertices get different colors. We started with some easy examples, and then moved on to more complicated graphs, which they attacked.</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-12.jpg"><img class="alignnone  wp-image-2938" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-12-205x300.jpg" alt="Image (12)" width="132" height="188"></a><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-13.jpg"><img class="alignnone  wp-image-2924" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-13-300x217.jpg" alt="Image (13)" width="263" height="193"></a></p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-14.jpg"><img class="alignnone  wp-image-2925" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-14-184x300.jpg" alt="Image (14)" width="102" height="159"></a><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-15.jpg"><img class="alignnone  wp-image-2926" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-15-300x218.jpg" alt="Image (15)" width="224" height="165"></a></p>
+<p>The aim is to use the fewest number of colors, and the <a href="http://en.wikipedia.org/wiki/Graph_coloring">chromatic number</a> of a graph is the smallest number of colors that suffice for a coloring. &nbsp;The girls colored the graphs, and indicated the number of colors they used, and we talked as a group in several instances about why one needed to use that many colors.</p>
+<p>Next, the girls paired off, each making a challenge graph for her partner, who colored it, and vice versa.</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-16.jpg"><img class="alignnone  wp-image-2927" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-16-196x300.jpg" alt="Image (16)" width="169" height="253"></a><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-17.jpg"><img class="alignnone  wp-image-2928" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-17-202x300.jpg" alt="Image (17)" width="171" height="249"></a></p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-18.jpg"><img class="alignright wp-image-2929" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-18-198x300.jpg" alt="Image (18)" width="134" height="199"></a><a href="http://en.wikipedia.org/wiki/Map_coloring">Map coloring</a>, where one colors the countries on a map in such a way that adjacent countries get different colors, is of course closely related to graph coloring.</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-20.jpg"><img class="alignleft wp-image-2931" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-20-201x300.jpg" alt="Image (20)" width="140" height="205"></a>The girls made their own maps to challenge each other, and then undertook to color those maps. We discussed the remarkable fact that four colors suffice to color any map.&nbsp;<a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-19.jpg"><img class="alignleft wp-image-2930" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-19-300x217.jpg" alt="Image (19)" width="193" height="142"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-28-001.jpg"><img class="alignright wp-image-2932" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-28-001-190x300.jpg" alt="Image (28)-001" width="149" height="225"></a></p>
+<p>Next, we considered <a href="http://en.wikipedia.org/wiki/Eulerian_path">Eulerian paths and circuits</a>, where one traces through all the edges of a graph without lifting one’s pencil and without retracing any edge more than once. We started off with some easy examples, but then considered more difficult cases.&nbsp;<a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-29.jpg"><img class="alignleft  wp-image-2934" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-29-300x218.jpg" alt="Image (29)" width="212" height="159"></a></p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-28-002.jpg"><img class="alignright wp-image-2933" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-28-002-218x300.jpg" alt="Image (28)-002" width="95" height="129"></a>An Eulerian <em>circuit</em> starts and ends at the same vertex, but an Eulerian <em>path</em> can start and end at different vertices.</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-30-001.jpg"><img class="alignright wp-image-2935" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-30-001-197x300.jpg" alt="Image (30)-001" width="149" height="222"></a>We discussed the fact that some graphs have no Eulerian path or circuit. &nbsp;If there is a circuit, then every time you enter a vertex, you leave it on a fresh edge; and so there must be an even number of edges at each vertex. &nbsp;With an Eulerian path, the starting and ending vertices (if distinct) will have odd degree, while all the other vertices will have even degree.</p>
+<p>It is a remarkable fact that amongst connected finite graphs, those necessary conditions are also sufficient. &nbsp;One can prove this by building up an Eulerian path or circuit (starting and ending at the two odd-degree nodes, if there are such); &nbsp;every time one enters a new vertex, there will be an edge to leave on, and so one will not get stuck. &nbsp;If some edges are missed, simply insert suitable detours to pick them up, and again it will all match up into a single path or circuit as desired. &nbsp;(But we didn’t dwell much on this proof in the second-grade class.)</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-312.jpg"><img class="alignleft  wp-image-2953" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-312-210x300.jpg" alt="Image (31)" width="184" height="256"></a>Meanwhile, this was an excellent opportunity to talk about The Seven Bridges of Königsberg. &nbsp;Is it possible to tour the city, while crossing each bridge exactly once?<a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Image-31-001.jpg"><img class="alignleft wp-image-2954" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Image-31-001-181x300.jpg" alt="Image (31)-001" width="106" height="171"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The final result: a booklet of fun graph problems!</p>
+<p><a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Graph-Coloring-Booklet.jpg"><img class="aligncenter wp-image-2950" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/Graph-Coloring-Booklet-199x300.jpg" alt="Graph Coloring Booklet" width="143" height="210"></a></p>
+<p>The high point of the day occurred in the midst of our graph-coloring activity when one little girl came up to me and said, “I want to be a mathematician!” &nbsp;What a delight!</p>
+<p>Andrej Bauer has helped me to make available <a href="http://jdh.hamkins.org/wp-content/uploads/2014/05/Graph-Coloring-and-Chromatic-Numbers.pdf">a kit of my original uncolored pages</a>&nbsp;(<a href="http://plus.google.com/102347204476260637672/posts/hsDuB5ZeBL2">see also post at Google+</a>),&nbsp;if anyone should want to use them to make their own booklets. &nbsp;Just print them out, copy double-sided (with correct orientation), and fold the pages to assemble into a booklet; a few staples can serve as a binding.</p>
+<p>See also my <a href="http://mathoverflow.net/q/168619/1946">followup question on MathOverflow</a>, for the grown-ups, concerning the computational difficulty of producing hard-to-color maps and graphs.</p>
+<p>Finally, check out my new book:</p>
+<p><a href="http://www.amazon.com/dp/B00U618LM2"><img class=" wp-image-3830 alignleft" title="Available on Amazon" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/A-Mathematicians-Year-in-Japan-644x1024.jpg" alt="A Mathematician&#39;s Year in Japan, by Joel David Hamkins, available on Amazon Kindle Books" width="177" height="279"></a></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share:</h3><div class="sd-content"><ul><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-2869" class="share-google-plus-1 sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span></span><span class="sharing-screen-reader-text">Click to share on Google+ (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-2869" class="share-twitter sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span></span><span class="sharing-screen-reader-text">Click to share on Reddit (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-2869" class="share-facebook sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span><span class="share-count">1K+</span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)<span class="share-count">1K+</span></span></a></li><li class="share-email share-service-visible"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=email&amp;nb=1" target="_blank" title="Click to email this to a friend"><span></span><span class="sharing-screen-reader-text">Click to email this to a friend (Opens in new window)</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#print" target="_blank" title="Click to print"><span></span><span class="sharing-screen-reader-text">Click to print (Opens in new window)</span></a></li><li><a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-2869" class="share-linkedin sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=tumblr&amp;nb=1" target="_blank" title="Click to share on Tumblr"><span></span><span class="sharing-screen-reader-text">Click to share on Tumblr (Opens in new window)</span></a></li><li class="share-end"></li><li class="share-pocket"><a rel="nofollow" data-shared="" class="share-pocket sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=pocket&amp;nb=1" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-2869" class="share-pinterest sd-button share-icon no-text" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?share=pinterest&amp;nb=1" target="_blank" title="Click to share on Pinterest"><span><span class="share-count">173</span></span><span class="sharing-screen-reader-text">Click to share on Pinterest (Opens in new window)<span class="share-count">173</span></span></a></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://jdh.hamkins.org/category/exposition/" rel="category tag">Exposition</a>, <a href="http://jdh.hamkins.org/category/math-for-kids/" rel="category tag">Math for Kids</a> and tagged <a href="http://jdh.hamkins.org/tag/bridges-of-konigsberg/" rel="tag">Bridges of Konigsberg</a>, <a href="http://jdh.hamkins.org/tag/eulerian-circuits/" rel="tag">Eulerian circuits</a>, <a href="http://jdh.hamkins.org/tag/eulerian-paths/" rel="tag">Eulerian paths</a>, <a href="http://jdh.hamkins.org/tag/graph-coloring/" rel="tag">graph coloring</a>, <a href="http://jdh.hamkins.org/tag/graph-theory/" rel="tag">graph theory</a>, <a href="http://jdh.hamkins.org/tag/kids/" rel="tag">kids</a>, <a href="http://jdh.hamkins.org/tag/map-coloring/" rel="tag">map coloring</a> by <a href="http://jdh.hamkins.org/author/hamkins/">Joel David Hamkins</a>. Bookmark the <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/" title="Permalink to Math for seven-year-olds:  graph coloring, chromatic numbers, and Eulerian paths and circuits" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-2869 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			52 thoughts on “<span>Math for seven-year-olds:  graph coloring, chromatic numbers, and Eulerian paths and circuits</span>”		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment byuser comment-author-hamkins bypostauthor even thread-even depth-1" id="li-comment-915">
+		<article id="comment-915" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c.png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-0"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-915"><time datetime="2014-05-29T22:12:03+00:00">May 29, 2014 at 10:12 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>As a bit of practical advice, this was more than enough material for a one hour session.  Indeed, one could easily fill an hour with just the coloring topics, saving the Eulerian paths and circuits, as well as the booklet assembly, for another session.  We chose instead to leave some of the larger graphs for coloring later or at home, which I think would be good, especially if it leads to mathematical discussions at home. Another issue was that it was more complicated than I had expected to arrange for the kids to draw graphs and maps in each other’s booklets, and so some care should go into organizing this.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=915#respond" onclick="return addComment.moveForm( &quot;comment-915&quot;, &quot;915&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment odd alt depth-2" id="li-comment-943">
+		<article id="comment-943" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/72af716fb5a42b473c0d9df9b16815d2.png" srcset="http://1.gravatar.com/avatar/72af716fb5a42b473c0d9df9b16815d2?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-72af716fb5a42b473c0d9df9b16815d2-0"><span class="fn">Alexander Nasonov</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-943"><time datetime="2014-06-17T13:20:08+00:00">June 17, 2014 at 1:20 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>My 7yo daughter could understand a theorem stating that in any party there are always two kids with the same number of friends. The proof uses the pigeonhole hole principle which can be easily explained with a game where kids run around chairs and there are less chairs than kids and the kids should try to grab a chair when they hear a command.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=943#respond" onclick="return addComment.moveForm( &quot;comment-943&quot;, &quot;943&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Alexander Nasonov">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-916">
+		<article id="comment-916" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/b26869adf713ad61b33a380ebd384ca9.png" srcset="http://2.gravatar.com/avatar/b26869adf713ad61b33a380ebd384ca9?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-b26869adf713ad61b33a380ebd384ca9-0"><span class="fn">Zarko</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-916"><time datetime="2014-05-30T07:01:40+00:00">May 30, 2014 at 7:01 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Would love the kit.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=916#respond" onclick="return addComment.moveForm( &quot;comment-916&quot;, &quot;916&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Zarko">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-918">
+		<article id="comment-918" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-1"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-918"><time datetime="2014-05-30T07:10:56+00:00">May 30, 2014 at 7:10 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I added a link to the kit.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=918#respond" onclick="return addComment.moveForm( &quot;comment-918&quot;, &quot;918&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-3" id="li-comment-922">
+		<article id="comment-922" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/b26869adf713ad61b33a380ebd384ca9(1).png" srcset="http://2.gravatar.com/avatar/b26869adf713ad61b33a380ebd384ca9?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-b26869adf713ad61b33a380ebd384ca9-1"><span class="fn">Zarko</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-922"><time datetime="2014-05-30T10:07:24+00:00">May 30, 2014 at 10:07 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks so much!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=922#respond" onclick="return addComment.moveForm( &quot;comment-922&quot;, &quot;922&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Zarko">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-917">
+		<article id="comment-917" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/6703133b7ed2d94abc288c76fd10f8cb.png" srcset="http://0.gravatar.com/avatar/6703133b7ed2d94abc288c76fd10f8cb?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-6703133b7ed2d94abc288c76fd10f8cb-0"><span class="fn"><a href="http://math.stackexchange.com/users/67861/mphlee" rel="external nofollow" class="url">MphLee</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-917"><time datetime="2014-05-30T07:02:30+00:00">May 30, 2014 at 7:02 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>So beautiful!<br>
+If mathematics was taught in this way the school would have been a thousand times more exciting…I always thought that the trick to keep the students engaged and interested is to give them interesting problem, opportunities to achieve results independently. imho..</p>
+<p>ps:I apologize for my bad english</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=917#respond" onclick="return addComment.moveForm( &quot;comment-917&quot;, &quot;917&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to MphLee">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-919">
+		<article id="comment-919" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-2"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-919"><time datetime="2014-05-30T07:12:09+00:00">May 30, 2014 at 7:12 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks very much! The students seemed to like it very much, and they were excited to continue working on it when time ran out.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=919#respond" onclick="return addComment.moveForm( &quot;comment-919&quot;, &quot;919&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-920">
+		<article id="comment-920" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/22b0566179d1c8efc45d77c774b84998.png" srcset="http://2.gravatar.com/avatar/22b0566179d1c8efc45d77c774b84998?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-22b0566179d1c8efc45d77c774b84998-0"><span class="fn">Rebecca</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-920"><time datetime="2014-05-30T09:36:33+00:00">May 30, 2014 at 9:36 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thank you for coming in yesterday and providing IIAB with such a wonderful experience as they explored this investigation. It was so developmentally appropriate and exciting to watch how engaged they were.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=920#respond" onclick="return addComment.moveForm( &quot;comment-920&quot;, &quot;920&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Rebecca">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-921">
+		<article id="comment-921" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-3"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-921"><time datetime="2014-05-30T09:39:30+00:00">May 30, 2014 at 9:39 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Oh, it was my pleasure!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=921#respond" onclick="return addComment.moveForm( &quot;comment-921&quot;, &quot;921&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-923">
+		<article id="comment-923" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/a8a4d7906038945b15c4cc59b31a4366.jpeg" srcset="http://1.gravatar.com/avatar/a8a4d7906038945b15c4cc59b31a4366?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-a8a4d7906038945b15c4cc59b31a4366-0"><span class="fn">Sam</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-923"><time datetime="2014-06-01T14:03:37+00:00">June 1, 2014 at 2:03 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is really fantastic. I am going to use this kit or some slight modification in our math circle next semester!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=923#respond" onclick="return addComment.moveForm( &quot;comment-923&quot;, &quot;923&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Sam">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-924">
+		<article id="comment-924" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-4"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-924"><time datetime="2014-06-01T16:40:30+00:00">June 1, 2014 at 4:40 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’m glad to hear you liked it.  I think it would work great for a math circle; let us know how it goes.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=924#respond" onclick="return addComment.moveForm( &quot;comment-924&quot;, &quot;924&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-925">
+		<article id="comment-925" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/f497b999208fd006d7b0aeb6720e6a2d.png" srcset="http://0.gravatar.com/avatar/f497b999208fd006d7b0aeb6720e6a2d?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-f497b999208fd006d7b0aeb6720e6a2d-0"><span class="fn">Marak</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-925"><time datetime="2014-06-13T05:33:15+00:00">June 13, 2014 at 5:33 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Wow. I teach 5 year olds english in japan, part of our weekly work is math, i think ill adapt some of these to our work.</p>
+<p>Very nicely done  <img draggable="false" class="emoji" alt="🙂" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/1f642.svg"></p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=925#respond" onclick="return addComment.moveForm( &quot;comment-925&quot;, &quot;925&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Marak">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-926">
+		<article id="comment-926" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-5"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-926"><time datetime="2014-06-13T08:08:29+00:00">June 13, 2014 at 8:08 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Domo arigatou! (Watashi mo nihon de oshiemashita, demo suugaku o oshiemashita.) I think it would work great for five-year-olds. The combination of mathematical thinking with coloring activity makes it ideal for young kids. But truthfully, I think the activity is fun for basically any age, and many parents have told me that they enjoyed completing the booklet with their kids.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=926#respond" onclick="return addComment.moveForm( &quot;comment-926&quot;, &quot;926&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-927">
+		<article id="comment-927" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/68bafc28b0c3bc99029fc84ea82dbd85.png" srcset="http://0.gravatar.com/avatar/68bafc28b0c3bc99029fc84ea82dbd85?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-68bafc28b0c3bc99029fc84ea82dbd85-0"><span class="fn">Sian Zelbo</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-927"><time datetime="2014-06-13T10:53:11+00:00">June 13, 2014 at 10:53 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is wonderful material for a math circle!  As an extension, you could also do chromatic numbers in 3D by using gumdrops and toothpicks.  (I.e., a child can see that the chromatic number of a tetrahedron is 4 because it takes 4 different colors of gumdrops to build it if we follow the rule that every toothpick must have 2 different colors on its ends.)</p>
+<p>BTW, I have a blog with other great activities for a math circle for 7 year olds:<br>
+<a href="http://1001mathproblems.blogspot.com/" rel="nofollow">http://1001mathproblems.blogspot.com</a></p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=927#respond" onclick="return addComment.moveForm( &quot;comment-927&quot;, &quot;927&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Sian Zelbo">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-928">
+		<article id="comment-928" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-6"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-928"><time datetime="2014-06-13T11:05:36+00:00">June 13, 2014 at 11:05 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I like your gum drop idea!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=928#respond" onclick="return addComment.moveForm( &quot;comment-928&quot;, &quot;928&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-929">
+		<article id="comment-929" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/e71b08c5d852c8e08ee4712c46f861c6.png" srcset="http://2.gravatar.com/avatar/e71b08c5d852c8e08ee4712c46f861c6?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-e71b08c5d852c8e08ee4712c46f861c6-0"><span class="fn"><a href="http://twitter.com/stevewinton" rel="external nofollow" class="url">Steve Winton</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-929"><time datetime="2014-06-13T12:30:56+00:00">June 13, 2014 at 12:30 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is great! Thanks for making the booklet available as well. Going to print it out and use it with my 8- and 6-year olds.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=929#respond" onclick="return addComment.moveForm( &quot;comment-929&quot;, &quot;929&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Steve Winton">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-930">
+		<article id="comment-930" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/d85a340189d76c750c5bcf78b8bd61ea.png" srcset="http://1.gravatar.com/avatar/d85a340189d76c750c5bcf78b8bd61ea?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-d85a340189d76c750c5bcf78b8bd61ea-0"><span class="fn"><a href="http://cavmaths.wordpress.com/" rel="external nofollow" class="url">Stephen Cavadino</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-930"><time datetime="2014-06-13T16:20:41+00:00">June 13, 2014 at 4:20 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is awesome! I absolutely love this and intend to do some similar activities with my 11 and 12 year olds. Thanks</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=930#respond" onclick="return addComment.moveForm( &quot;comment-930&quot;, &quot;930&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Stephen Cavadino">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-931">
+		<article id="comment-931" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/555e4db710667bf4fb7799756b6351f7.jpeg" srcset="http://2.gravatar.com/avatar/555e4db710667bf4fb7799756b6351f7?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-555e4db710667bf4fb7799756b6351f7-0"><span class="fn">Owen Martin</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-931"><time datetime="2014-06-13T16:35:41+00:00">June 13, 2014 at 4:35 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>It’s nice to see you’re teaching them the Peterson graph already!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=931#respond" onclick="return addComment.moveForm( &quot;comment-931&quot;, &quot;931&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Owen Martin">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-932">
+		<article id="comment-932" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-7"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-932"><time datetime="2014-06-13T16:39:36+00:00">June 13, 2014 at 4:39 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’m glad you noticed.  It is beautiful after all, and seven-year-olds can 3-color it, although they find it a challenge to do so.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=932#respond" onclick="return addComment.moveForm( &quot;comment-932&quot;, &quot;932&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-933">
+		<article id="comment-933" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/e526892bb14be0430e82e6aea585fbbb.png" srcset="http://2.gravatar.com/avatar/e526892bb14be0430e82e6aea585fbbb?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-e526892bb14be0430e82e6aea585fbbb-0"><span class="fn">michel reed</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-933"><time datetime="2014-06-13T22:30:31+00:00">June 13, 2014 at 10:30 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>so nifty, can’t wait to use with my middle school SpEd kids next year!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=933#respond" onclick="return addComment.moveForm( &quot;comment-933&quot;, &quot;933&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to michel reed">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-934">
+		<article id="comment-934" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/3d2ba8e920f4f2b1f7cac0c2224d4349.png" srcset="http://0.gravatar.com/avatar/3d2ba8e920f4f2b1f7cac0c2224d4349?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-3d2ba8e920f4f2b1f7cac0c2224d4349-0"><span class="fn">cayley</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-934"><time datetime="2014-06-13T23:59:36+00:00">June 13, 2014 at 11:59 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>A friend shared this on Facebook, and as a former math teacher and later professor (and implicitly long-time math student) this is just the kind of thing that should be in the curriculum. It’s wonderful, and I’m going to bookmark this for when I get to guest lecture in my daughters’ math classes. (As an aside, I remember my father talking to my class about probability when I was in elementary school, and I wound up a mathematician, so good luck to your daughter).</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=934#respond" onclick="return addComment.moveForm( &quot;comment-934&quot;, &quot;934&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to cayley">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-935">
+		<article id="comment-935" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/8313bb5714e9e1f8c1b9c143d89d955a.png" srcset="http://2.gravatar.com/avatar/8313bb5714e9e1f8c1b9c143d89d955a?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-8313bb5714e9e1f8c1b9c143d89d955a-0"><span class="fn">j</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-935"><time datetime="2014-06-14T15:08:34+00:00">June 14, 2014 at 3:08 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I have to admit being confused by the “4 colors suffice for any map” idea. Consider the Central African Republic, which is surrounded by 6 countries. Or Niger, or Uganda…</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=935#respond" onclick="return addComment.moveForm( &quot;comment-935&quot;, &quot;935&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to j">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-936">
+		<article id="comment-936" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-8"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-936"><time datetime="2014-06-14T15:37:55+00:00">June 14, 2014 at 3:37 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>You could color the Central African Republic purple, say, and then go red-blue-red-blue-red-blue for the surrounding countries, handling the particular case of those countries with only three colors.  You may have assumed that those other six countries must use more than three colors, but in fact you only needed two for them. The four-color theorem is a wonderful, deep theorem with a rich history, which is also connected with philosophical ideas surrounding the question of what does it mean to prove something, for the simplest proofs were carried out first by computer, and led to truly enormous proof objects that could not really be checked by a human. See <a href="http://en.wikipedia.org/wiki/Four_color_theorem" rel="nofollow">http://en.wikipedia.org/wiki/Four_color_theorem</a>.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=936#respond" onclick="return addComment.moveForm( &quot;comment-936&quot;, &quot;936&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-937">
+		<article id="comment-937" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/2dd7859c2ceafb10dce28bb35ac8003d.png" srcset="http://2.gravatar.com/avatar/2dd7859c2ceafb10dce28bb35ac8003d?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-2dd7859c2ceafb10dce28bb35ac8003d-0"><span class="fn">Sue Prok</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-937"><time datetime="2014-06-14T22:04:12+00:00">June 14, 2014 at 10:04 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is perfect.  I am a HS math teacher with young kids.  I am doing “math camp” this summer and enjoying this activity.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=937#respond" onclick="return addComment.moveForm( &quot;comment-937&quot;, &quot;937&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Sue Prok">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-938">
+		<article id="comment-938" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-9"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-938"><time datetime="2014-06-14T22:10:29+00:00">June 14, 2014 at 10:10 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’m glad to hear it. Please report back to us about it!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=938#respond" onclick="return addComment.moveForm( &quot;comment-938&quot;, &quot;938&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-939">
+		<article id="comment-939" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/ece443a0e90179e7f523631b0973f06e.png" srcset="http://2.gravatar.com/avatar/ece443a0e90179e7f523631b0973f06e?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-ece443a0e90179e7f523631b0973f06e-0"><span class="fn">Neo</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-939"><time datetime="2014-06-15T04:18:25+00:00">June 15, 2014 at 4:18 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>beautiful. Something intrigues me a lot: is there a collection of such exercises that could supplement (or ideally replace) a “normal” school curriculum, for most ages besides 8 year olds, such that these children learn and develop their math skills (and much more than that) in this beautiful way?<br>
+If there isn’t such collection compiled yet, can it be created? I can just imagine the benefits this would bring to the many children that will have the freedom and pleasure to use it.<br>
+Let’s build something like this!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=939#respond" onclick="return addComment.moveForm( &quot;comment-939&quot;, &quot;939&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Neo">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-940">
+		<article id="comment-940" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/47e462d9d3769c497ed607c131d618b1.png" srcset="http://1.gravatar.com/avatar/47e462d9d3769c497ed607c131d618b1?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-47e462d9d3769c497ed607c131d618b1-0"><span class="fn">subbu</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-940"><time datetime="2014-06-16T07:18:50+00:00">June 16, 2014 at 7:18 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>would prefer if uploaded to some other place than a google drive…</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=940#respond" onclick="return addComment.moveForm( &quot;comment-940&quot;, &quot;940&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to subbu">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-941">
+		<article id="comment-941" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-10"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-941"><time datetime="2014-06-16T07:32:28+00:00">June 16, 2014 at 7:32 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I placed the pdf also on this site, so there is now a link.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=941#respond" onclick="return addComment.moveForm( &quot;comment-941&quot;, &quot;941&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://freakonometrics.hypotheses.org/14958" rel="external nofollow" class="url">Somewhere else, part 142 | Freakonometrics</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-944">
+		<article id="comment-944" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/0516286f713e5daff972c6e49d46a347.png" srcset="http://0.gravatar.com/avatar/0516286f713e5daff972c6e49d46a347?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-0516286f713e5daff972c6e49d46a347-0"><span class="fn"><a href="http://thoughts4dads.blogspot.fr/" rel="external nofollow" class="url">FXF</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-944"><time datetime="2014-06-27T08:18:37+00:00">June 27, 2014 at 8:18 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Hello, and congrats for this wonderful kit ! Do you have an objection if I translate it in French for my kids + put it on my blog with of course your refs and links ? Thanks <img draggable="false" class="emoji" alt="🙂" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/1f642.svg"></p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=944#respond" onclick="return addComment.moveForm( &quot;comment-944&quot;, &quot;944&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to FXF">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-945">
+		<article id="comment-945" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-11"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-945"><time datetime="2014-06-27T08:38:09+00:00">June 27, 2014 at 8:38 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>That would be great.  Please post a link here when you’ve got it.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=945#respond" onclick="return addComment.moveForm( &quot;comment-945&quot;, &quot;945&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-3" id="li-comment-950">
+		<article id="comment-950" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/0516286f713e5daff972c6e49d46a347(1).png" srcset="http://0.gravatar.com/avatar/0516286f713e5daff972c6e49d46a347?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-0516286f713e5daff972c6e49d46a347-1"><span class="fn"><a href="http://thoughts4dads.blogspot.fr/" rel="external nofollow" class="url">FXF</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-950"><time datetime="2014-07-15T05:33:45+00:00">July 15, 2014 at 5:33 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Here it is <img draggable="false" class="emoji" alt="🙂" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/1f642.svg"><br>
+<a href="http://thoughts4dads.blogspot.fr/2014/07/coloriages-de-graphes-et-nombres.html" rel="nofollow">http://thoughts4dads.blogspot.fr/2014/07/coloriages-de-graphes-et-nombres.html</a><br>
+and the PDF : <a href="http://fr.go2prod.com/wp-content/themes/imgsrc/coloriage%20de%20graphes%20et%20nombres%20chromatiques.pdf" rel="nofollow">http://fr.go2prod.com/wp-content/themes/imgsrc/coloriage%20de%20graphes%20et%20nombres%20chromatiques.pdf</a></p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=950#respond" onclick="return addComment.moveForm( &quot;comment-950&quot;, &quot;950&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to FXF">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-4" id="li-comment-951">
+		<article id="comment-951" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-12"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-951"><time datetime="2014-07-15T07:22:50+00:00">July 15, 2014 at 7:22 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Fantastic!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=951#respond" onclick="return addComment.moveForm( &quot;comment-951&quot;, &quot;951&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment even depth-5" id="li-comment-1351">
+		<article id="comment-1351" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/0516286f713e5daff972c6e49d46a347(1).png" srcset="http://0.gravatar.com/avatar/0516286f713e5daff972c6e49d46a347?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-0516286f713e5daff972c6e49d46a347-2"><span class="fn"><a href="http://toysfab.com/" rel="external nofollow" class="url">FXF</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-1351"><time datetime="2015-02-22T15:39:55+00:00">February 22, 2015 at 3:39 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>The site address has changed, it is now <a href="http://fr.toysfab.com/2014/07/coloriages-de-graphes-et-nombres-chromatiques/" rel="nofollow">http://fr.toysfab.com/2014/07/coloriages-de-graphes-et-nombres-chromatiques/</a></p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=1351#respond" onclick="return addComment.moveForm( &quot;comment-1351&quot;, &quot;1351&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to FXF">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-946">
+		<article id="comment-946" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/fb17296f7134b1189b84c88b768b8738.png" srcset="http://0.gravatar.com/avatar/fb17296f7134b1189b84c88b768b8738?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-fb17296f7134b1189b84c88b768b8738-0"><span class="fn"><a href="http://boolesrings.org/ioanna/" rel="external nofollow" class="url">ioanna</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-946"><time datetime="2014-07-01T05:11:28+00:00">July 1, 2014 at 5:11 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is a wonderful booklet indeed! I particularly like that in the last page, the mathematical terminology on the right side, including the reason why the answer is “no”, becomes self explanatory to any age, after reading the left side. I will translate this to Greek, German, and Spanish if that’s ok. I believe it’s terribly important to make maths interesting and fun to all ages!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=946#respond" onclick="return addComment.moveForm( &quot;comment-946&quot;, &quot;946&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to ioanna">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-947">
+		<article id="comment-947" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-13"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-947"><time datetime="2014-07-01T07:37:45+00:00">July 1, 2014 at 7:37 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks, Ioanna!  And please provide a link to your translations. </p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=947#respond" onclick="return addComment.moveForm( &quot;comment-947&quot;, &quot;947&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-948">
+		<article id="comment-948" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/68bafc28b0c3bc99029fc84ea82dbd85.png" srcset="http://0.gravatar.com/avatar/68bafc28b0c3bc99029fc84ea82dbd85?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-68bafc28b0c3bc99029fc84ea82dbd85-1"><span class="fn"><a href="http://1001mathproblems.blogspot.com/" rel="external nofollow" class="url">Sian Zelbo</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-948"><time datetime="2014-07-03T09:16:29+00:00">July 3, 2014 at 9:16 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>The graph-coloring activity worked very well with my own second grade math circle.   The kids explored and noticed many interesting things, such as that a triangle has a chromatic number of 3, so any graph with an embedded triangle must need at least 3 colors.  We also did some word problem applications.  (E.g., You are planning a dinner party where certain people don’t get along, and you have to find the minimum number of tables you must use so that every arguing couple is separated.)<br>
+It also inspired me to find a way to do more topology with 7-year-olds.  Here’s my Euler’s formula activity:  <a href="http://1001mathproblems.blogspot.com/2014/07/this-weeks-puzzle.html" rel="nofollow">http://1001mathproblems.blogspot.com/2014/07/this-weeks-puzzle.html</a>.  The trick was to find a way to ask questions so that the children are exploring the relationships and not simply learning a formula.<br>
+Thanks again for your wonderful contribution!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=948#respond" onclick="return addComment.moveForm( &quot;comment-948&quot;, &quot;948&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Sian Zelbo">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor even depth-2" id="li-comment-949">
+		<article id="comment-949" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-14"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-949"><time datetime="2014-07-03T10:05:22+00:00">July 3, 2014 at 10:05 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Great!  I like your Euler’s formula post.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=949#respond" onclick="return addComment.moveForm( &quot;comment-949&quot;, &quot;949&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-952">
+		<article id="comment-952" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/092a875c92d6b7fd0f5e6870a4df5bed.png" srcset="http://0.gravatar.com/avatar/092a875c92d6b7fd0f5e6870a4df5bed?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-092a875c92d6b7fd0f5e6870a4df5bed-0"><span class="fn">Stephen Anastasi</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-952"><time datetime="2014-08-10T02:53:53+00:00">August 10, 2014 at 2:53 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I have taught the seven bridges of Konigsberg to Year 10 and they seemed to find it flat and boring. I think its the way it is presented within a time poor setting, and you end up teaching formulas. I think that starting with this simple colouring approach would be a lot more fun.<br>
+I think I would change the writing to sentence case,  because some children start to copy the upper case style, then get mixed up with their writing in later years.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=952#respond" onclick="return addComment.moveForm( &quot;comment-952&quot;, &quot;952&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Stephen Anastasi">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-953">
+		<article id="comment-953" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/53451fd23fd562f37803940900f1fcbe.png" srcset="http://2.gravatar.com/avatar/53451fd23fd562f37803940900f1fcbe?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-53451fd23fd562f37803940900f1fcbe-0"><span class="fn"><a href="http://pinkmathematics.blogspot.fr/" rel="external nofollow" class="url">Simon Gregg</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-953"><time datetime="2014-12-02T17:46:50+00:00">December 2, 2014 at 5:46 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>We tried this out with our 8 year old children the other week, and they really enjoyed it and engaged with it. Thanks!<br>
+<a href="http://y4ist.blogspot.fr/2014/11/euler-week.html" rel="nofollow">http://y4ist.blogspot.fr/2014/11/euler-week.html</a><br>
+(scroll to bottom of the post to see the graphs and chromatic numbers work)</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=953#respond" onclick="return addComment.moveForm( &quot;comment-953&quot;, &quot;953&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Simon Gregg">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-954">
+		<article id="comment-954" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-15"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-954"><time datetime="2014-12-02T22:16:50+00:00">December 2, 2014 at 10:16 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I’m so glad you enjoyed it—I can see in the photos of your activities that the kids had a great time with some serious, fun math!</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=954#respond" onclick="return addComment.moveForm( &quot;comment-954&quot;, &quot;954&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-955">
+		<article id="comment-955" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/35f89119a328d98e5318a5c18974d1fd.png" srcset="http://0.gravatar.com/avatar/35f89119a328d98e5318a5c18974d1fd?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-35f89119a328d98e5318a5c18974d1fd-0"><span class="fn">Priyank</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-955"><time datetime="2015-01-08T20:54:58+00:00">January 8, 2015 at 8:54 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>I was playing the chromatic number game with my 6 year old son and we came up with a 5 vertex complete graph.  But that needed 5 colors?</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=955#respond" onclick="return addComment.moveForm( &quot;comment-955&quot;, &quot;955&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Priyank">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-956">
+		<article id="comment-956" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-16"><span class="fn">Joel David Hamkins</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-956"><time datetime="2015-01-08T23:20:39+00:00">January 8, 2015 at 11:20 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Yes, that is right. The four-color theorem concerns only (connected) planar graphs, that is, graphs that can be drawn in the plane without any lines crossing.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=956#respond" onclick="return addComment.moveForm( &quot;comment-956&quot;, &quot;956&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://jdh.hamkins.org/math-for-eight-year-olds/" rel="external nofollow" class="url">Math for eight-year-olds: graph theory for kids! | Joel David Hamkins</a></p>
+	</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://hedgehog.arvixe.com/~jaearly/june-bits-and-clips/" rel="external nofollow" class="url">June Bits and Clips | Polly Castor</a></p>
+	</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://pollycastor.com/june-bits-and-clips/" rel="external nofollow" class="url">June 2014 Bits and Clips | Polly Castor</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-4103">
+		<article id="comment-4103" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/26d547e65af383385e1d1a0d2ffc7dd5.png" srcset="http://2.gravatar.com/avatar/26d547e65af383385e1d1a0d2ffc7dd5?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo grav-hashed grav-hijack" height="68" width="68" id="grav-26d547e65af383385e1d1a0d2ffc7dd5-0"><span class="fn">Vito</span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-4103"><time datetime="2015-08-27T21:28:39+00:00">August 27, 2015 at 9:28 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Does anyone know why knowing the chromatic number important? And which branch of mathematics is chromatic number a part of? I mean no offense or anything I’m just curious <img draggable="false" class="emoji" alt="🙂" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/1f642.svg"></p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=4103#respond" onclick="return addComment.moveForm( &quot;comment-4103&quot;, &quot;4103&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Vito">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-4119">
+		<article id="comment-4119" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-17"><span class="fn"><a href="http://jdh.hamkins.org/" rel="external nofollow" class="url">Joel David Hamkins</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-4119"><time datetime="2015-08-28T12:56:04+00:00">August 28, 2015 at 12:56 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Finding the chromatic number of a finite graph is part of finite graph theory, which is part of discrete mathematics, but also with a strong connection with finite combinatorics. In the case of infinite graphs, the study of the chromatic number of infinite graphs is part of infinite combinatorics, which is a part of set theory, and there are numerous very interesting independence results. </p>
+<p>You ask: why is it important? For me, importance is irrelevant—rather, we study the chromatic number of various graphs just because it is fun and interesting to consider! The case of 4-coloring the planar graphs also has a very interesting history, connected with philosophical issues about the nature of proof, which arise in light of the fact that the first proofs made use of computations carried out via computer, which could not feasibly be carried out by hand.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=4119#respond" onclick="return addComment.moveForm( &quot;comment-4119&quot;, &quot;4119&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="https://gaurish4math.wordpress.com/2016/06/15/135th-carnival-of-mathematics/" rel="external nofollow" class="url">135th Carnival of Mathematics | Gaurish4Math</a></p>
+	</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://toysfab.com/2014/07/coloriages-de-graphes-et-nombres-chromatiques/" rel="external nofollow" class="url">Coloriages de graphes et nombres chromatiques ! | Toysfab</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-8722">
+		<article id="comment-8722" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/picture" srcset="http://1.gravatar.com/avatar/a1fc8488ffce411e49a706d5265bff73?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo" height="68" width="68"><span class="fn"><a href="https://www.facebook.com/app_scoped_user_id/775264682582089/" rel="external nofollow" class="url">Leandro Zatesko</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-8722"><time datetime="2017-10-10T08:54:14+00:00">October 10, 2017 at 8:54 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>First, thank you very much for making your work available.</p>
+<p>Maybe this is a very silly question, but I don’t see how to print the pages of the PDF file double-sided, fold them, and then get the pages in the correct order in the booklet. For example, if page 2 is printed on the reverse side of page 1, then page 2a will be separated from page 2b by all the pages 3,…,11. From my point of view, the reverse side of page 1 should contain on the left the contents currently in page 2a, and on the right the contents currently in page 11b.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=8722#respond" onclick="return addComment.moveForm( &quot;comment-8722&quot;, &quot;8722&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Leandro Zatesko">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-hamkins bypostauthor odd alt depth-2" id="li-comment-8723">
+		<article id="comment-8723" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/88f07b56c0bc557a85e244f9d9dfb85c(1).png" srcset="http://2.gravatar.com/avatar/88f07b56c0bc557a85e244f9d9dfb85c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo grav-hashed grav-hijack" height="39" width="39" id="grav-88f07b56c0bc557a85e244f9d9dfb85c-18"><span class="fn"><a href="http://jdh.hamkins.org/" rel="external nofollow" class="url">Joel David Hamkins</a></span> on <a href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#comment-8723"><time datetime="2017-10-10T12:35:41+00:00">October 10, 2017 at 12:35 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>They were meant to be printed double sides, folded in half and then placed inside the outer page, as in the photo at the bottom of the post (zoom in to see how the folded pages fit together). That is how I planned it and it worked fine for me. But I realize now that this was unnecessarily confusing for many people, and so if I were to do this again, I would organize it differently.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/?replytocom=8723#respond" onclick="return addComment.moveForm( &quot;comment-8723&quot;, &quot;8723&quot;, &quot;respond&quot;, &quot;2869&quot; )" aria-label="Reply to Joel David Hamkins">Reply <span>↓</span></a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol>
+
+		
+		
+	
+	
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/saved_resource(3).html" style="width: 100%; height: 58px; border: 0px;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" scrolling="no"></iframe>
+				<!--[if !IE]><!-->
+				<script>
+					document.addEventListener('DOMContentLoaded', function () {
+						var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+						for (var i = 0; i < commentForms.length; i++) {
+							commentForms[i].allowTransparency = false;
+							commentForms[i].scrolling = 'no';
+						}
+					});
+				</script>
+				<!--<![endif]-->
+			<input id="ak_js" name="ak_js" type="hidden" value="1541776461557"></form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="">
+
+		
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+<div id="supplementary" class="one">
+	
+		<div id="second" class="widget-area" role="complementary">
+		<aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3><div class="tagcloud"><a href="http://jdh.hamkins.org/tag/absoluteness/" class="tag-cloud-link tag-link-13 tag-link-position-1" style="font-size: 9.1864406779661pt;" aria-label="absoluteness (9 items)">absoluteness</a>
+<a href="http://jdh.hamkins.org/tag/arthur-apter/" class="tag-cloud-link tag-link-24 tag-link-position-2" style="font-size: 8.5932203389831pt;" aria-label="Arthur Apter (8 items)">Arthur Apter</a>
+<a href="http://jdh.hamkins.org/tag/automorphism-towers/" class="tag-cloud-link tag-link-26 tag-link-position-3" style="font-size: 8pt;" aria-label="automorphism towers (7 items)">automorphism towers</a>
+<a href="http://jdh.hamkins.org/tag/ch/" class="tag-cloud-link tag-link-51 tag-link-position-4" style="font-size: 9.1864406779661pt;" aria-label="CH (9 items)">CH</a>
+<a href="http://jdh.hamkins.org/tag/chess/" class="tag-cloud-link tag-link-52 tag-link-position-5" style="font-size: 10.491525423729pt;" aria-label="chess (12 items)">chess</a>
+<a href="http://jdh.hamkins.org/tag/computability/" class="tag-cloud-link tag-link-57 tag-link-position-6" style="font-size: 12.508474576271pt;" aria-label="computability (18 items)">computability</a>
+<a href="http://jdh.hamkins.org/tag/countable-models/" class="tag-cloud-link tag-link-60 tag-link-position-7" style="font-size: 15pt;" aria-label="countable models (30 items)">countable models</a>
+<a href="http://jdh.hamkins.org/tag/definability/" class="tag-cloud-link tag-link-67 tag-link-position-8" style="font-size: 12.983050847458pt;" aria-label="definability (20 items)">definability</a>
+<a href="http://jdh.hamkins.org/tag/determinacy/" class="tag-cloud-link tag-link-70 tag-link-position-9" style="font-size: 10.135593220339pt;" aria-label="determinacy (11 items)">determinacy</a>
+<a href="http://jdh.hamkins.org/tag/diamond/" class="tag-cloud-link tag-link-71 tag-link-position-10" style="font-size: 8pt;" aria-label="diamond (7 items)">diamond</a>
+<a href="http://jdh.hamkins.org/tag/elementary-embeddings/" class="tag-cloud-link tag-link-74 tag-link-position-11" style="font-size: 12.508474576271pt;" aria-label="elementary embeddings (18 items)">elementary embeddings</a>
+<a href="http://jdh.hamkins.org/tag/equivalence-relations/" class="tag-cloud-link tag-link-79 tag-link-position-12" style="font-size: 8.5932203389831pt;" aria-label="equivalence relations (8 items)">equivalence relations</a>
+<a href="http://jdh.hamkins.org/tag/forcing/" class="tag-cloud-link tag-link-88 tag-link-position-13" style="font-size: 22pt;" aria-label="forcing (119 items)">forcing</a>
+<a href="http://jdh.hamkins.org/tag/forcing-axioms/" class="tag-cloud-link tag-link-89 tag-link-position-14" style="font-size: 11.322033898305pt;" aria-label="forcing axioms (14 items)">forcing axioms</a>
+<a href="http://jdh.hamkins.org/tag/games/" class="tag-cloud-link tag-link-94 tag-link-position-15" style="font-size: 13.457627118644pt;" aria-label="games (22 items)">games</a>
+<a href="http://jdh.hamkins.org/tag/gbc/" class="tag-cloud-link tag-link-96 tag-link-position-16" style="font-size: 11.322033898305pt;" aria-label="GBC (14 items)">GBC</a>
+<a href="http://jdh.hamkins.org/tag/geology/" class="tag-cloud-link tag-link-98 tag-link-position-17" style="font-size: 12.983050847458pt;" aria-label="geology (20 items)">geology</a>
+<a href="http://jdh.hamkins.org/tag/ground-axiom/" class="tag-cloud-link tag-link-108 tag-link-position-18" style="font-size: 8.5932203389831pt;" aria-label="ground axiom (8 items)">ground axiom</a>
+<a href="http://jdh.hamkins.org/tag/groups/" class="tag-cloud-link tag-link-109 tag-link-position-19" style="font-size: 8pt;" aria-label="groups (7 items)">groups</a>
+<a href="http://jdh.hamkins.org/tag/gunter-fuchs/" class="tag-cloud-link tag-link-110 tag-link-position-20" style="font-size: 8pt;" aria-label="Gunter Fuchs (7 items)">Gunter Fuchs</a>
+<a href="http://jdh.hamkins.org/tag/hod/" class="tag-cloud-link tag-link-116 tag-link-position-21" style="font-size: 13.457627118644pt;" aria-label="HOD (22 items)">HOD</a>
+<a href="http://jdh.hamkins.org/tag/hypnagogic-digraph/" class="tag-cloud-link tag-link-119 tag-link-position-22" style="font-size: 9.1864406779661pt;" aria-label="hypnagogic digraph (9 items)">hypnagogic digraph</a>
+<a href="http://jdh.hamkins.org/tag/indestructibility/" class="tag-cloud-link tag-link-126 tag-link-position-23" style="font-size: 13.694915254237pt;" aria-label="indestructibility (23 items)">indestructibility</a>
+<a href="http://jdh.hamkins.org/tag/infinitary-computability/" class="tag-cloud-link tag-link-127 tag-link-position-24" style="font-size: 12.745762711864pt;" aria-label="infinitary computability (19 items)">infinitary computability</a>
+<a href="http://jdh.hamkins.org/tag/infinite-chess/" class="tag-cloud-link tag-link-128 tag-link-position-25" style="font-size: 10.491525423729pt;" aria-label="infinite chess (12 items)">infinite chess</a>
+<a href="http://jdh.hamkins.org/tag/infinite-games/" class="tag-cloud-link tag-link-129 tag-link-position-26" style="font-size: 13.220338983051pt;" aria-label="infinite games (21 items)">infinite games</a>
+<a href="http://jdh.hamkins.org/tag/ittms/" class="tag-cloud-link tag-link-132 tag-link-position-27" style="font-size: 12.271186440678pt;" aria-label="ITTMs (17 items)">ITTMs</a>
+<a href="http://jdh.hamkins.org/tag/jonas-reitz/" class="tag-cloud-link tag-link-139 tag-link-position-28" style="font-size: 8.5932203389831pt;" aria-label="Jonas Reitz (8 items)">Jonas Reitz</a>
+<a href="http://jdh.hamkins.org/tag/kids/" class="tag-cloud-link tag-link-144 tag-link-position-29" style="font-size: 13.457627118644pt;" aria-label="kids (22 items)">kids</a>
+<a href="http://jdh.hamkins.org/tag/km/" class="tag-cloud-link tag-link-146 tag-link-position-30" style="font-size: 9.1864406779661pt;" aria-label="KM (9 items)">KM</a>
+<a href="http://jdh.hamkins.org/tag/large-cardinals/" class="tag-cloud-link tag-link-151 tag-link-position-31" style="font-size: 18.559322033898pt;" aria-label="large cardinals (60 items)">large cardinals</a>
+<a href="http://jdh.hamkins.org/tag/maximality-principle/" class="tag-cloud-link tag-link-168 tag-link-position-32" style="font-size: 9.1864406779661pt;" aria-label="maximality principle (9 items)">maximality principle</a>
+<a href="http://jdh.hamkins.org/tag/modal-logic/" class="tag-cloud-link tag-link-173 tag-link-position-33" style="font-size: 12.983050847458pt;" aria-label="modal logic (20 items)">modal logic</a>
+<a href="http://jdh.hamkins.org/tag/models-of-pa/" class="tag-cloud-link tag-link-175 tag-link-position-34" style="font-size: 10.966101694915pt;" aria-label="models of PA (13 items)">models of PA</a>
+<a href="http://jdh.hamkins.org/tag/multiverse/" class="tag-cloud-link tag-link-179 tag-link-position-35" style="font-size: 15.35593220339pt;" aria-label="multiverse (32 items)">multiverse</a>
+<a href="http://jdh.hamkins.org/tag/open-games/" class="tag-cloud-link tag-link-305 tag-link-position-36" style="font-size: 10.135593220339pt;" aria-label="open games (11 items)">open games</a>
+<a href="http://jdh.hamkins.org/tag/potentialism/" class="tag-cloud-link tag-link-345 tag-link-position-37" style="font-size: 10.491525423729pt;" aria-label="potentialism (12 items)">potentialism</a>
+<a href="http://jdh.hamkins.org/tag/psc-cuny/" class="tag-cloud-link tag-link-213 tag-link-position-38" style="font-size: 10.966101694915pt;" aria-label="PSC-CUNY (13 items)">PSC-CUNY</a>
+<a href="http://jdh.hamkins.org/tag/supercompact/" class="tag-cloud-link tag-link-247 tag-link-position-39" style="font-size: 11.915254237288pt;" aria-label="supercompact (16 items)">supercompact</a>
+<a href="http://jdh.hamkins.org/tag/truth/" class="tag-cloud-link tag-link-262 tag-link-position-40" style="font-size: 9.6610169491525pt;" aria-label="truth (10 items)">truth</a>
+<a href="http://jdh.hamkins.org/tag/universal-definition/" class="tag-cloud-link tag-link-386 tag-link-position-41" style="font-size: 9.1864406779661pt;" aria-label="universal definition (9 items)">universal definition</a>
+<a href="http://jdh.hamkins.org/tag/universal-program/" class="tag-cloud-link tag-link-378 tag-link-position-42" style="font-size: 10.135593220339pt;" aria-label="universal program (11 items)">universal program</a>
+<a href="http://jdh.hamkins.org/tag/victoria-gitman/" class="tag-cloud-link tag-link-272 tag-link-position-43" style="font-size: 10.135593220339pt;" aria-label="Victoria Gitman (11 items)">Victoria Gitman</a>
+<a href="http://jdh.hamkins.org/tag/hugh-woodin/" class="tag-cloud-link tag-link-276 tag-link-position-44" style="font-size: 8.5932203389831pt;" aria-label="W. Hugh Woodin (8 items)">W. Hugh Woodin</a>
+<a href="http://jdh.hamkins.org/tag/weakly-compact/" class="tag-cloud-link tag-link-277 tag-link-position-45" style="font-size: 8.5932203389831pt;" aria-label="weakly compact (8 items)">weakly compact</a></div>
+</aside>	</div><!-- #second .widget-area -->
+	
+	</div><!-- #supplementary -->
+			<div id="site-generator">
+								<a href="https://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<div style="display:none">
+	<div class="grofile-hash-map-88f07b56c0bc557a85e244f9d9dfb85c">
+	</div>
+	<div class="grofile-hash-map-72af716fb5a42b473c0d9df9b16815d2">
+	</div>
+	<div class="grofile-hash-map-2598b5ad7ff053b9d67cf4832f1d990a">
+	</div>
+	<div class="grofile-hash-map-b26869adf713ad61b33a380ebd384ca9">
+	</div>
+	<div class="grofile-hash-map-6703133b7ed2d94abc288c76fd10f8cb">
+	</div>
+	<div class="grofile-hash-map-22b0566179d1c8efc45d77c774b84998">
+	</div>
+	<div class="grofile-hash-map-a8a4d7906038945b15c4cc59b31a4366">
+	</div>
+	<div class="grofile-hash-map-f497b999208fd006d7b0aeb6720e6a2d">
+	</div>
+	<div class="grofile-hash-map-68bafc28b0c3bc99029fc84ea82dbd85">
+	</div>
+	<div class="grofile-hash-map-e71b08c5d852c8e08ee4712c46f861c6">
+	</div>
+	<div class="grofile-hash-map-45edf910aa6994088f87784af7f2f142">
+	</div>
+	<div class="grofile-hash-map-555e4db710667bf4fb7799756b6351f7">
+	</div>
+	<div class="grofile-hash-map-e526892bb14be0430e82e6aea585fbbb">
+	</div>
+	<div class="grofile-hash-map-3d2ba8e920f4f2b1f7cac0c2224d4349">
+	</div>
+	<div class="grofile-hash-map-8313bb5714e9e1f8c1b9c143d89d955a">
+	</div>
+	<div class="grofile-hash-map-2dd7859c2ceafb10dce28bb35ac8003d">
+	</div>
+	<div class="grofile-hash-map-ece443a0e90179e7f523631b0973f06e">
+	</div>
+	<div class="grofile-hash-map-47e462d9d3769c497ed607c131d618b1">
+	</div>
+	<div class="grofile-hash-map-0516286f713e5daff972c6e49d46a347">
+	</div>
+	<div class="grofile-hash-map-fb17296f7134b1189b84c88b768b8738">
+	</div>
+	<div class="grofile-hash-map-092a875c92d6b7fd0f5e6870a4df5bed">
+	</div>
+	<div class="grofile-hash-map-53451fd23fd562f37803940900f1fcbe">
+	</div>
+	<div class="grofile-hash-map-35f89119a328d98e5318a5c18974d1fd">
+	</div>
+	<div class="grofile-hash-map-26d547e65af383385e1d1a0d2ffc7dd5">
+	</div>
+	<div class="grofile-hash-map-a1fc8488ffce411e49a706d5265bff73">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/jdh.hamkins.org\/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths\/":2869};
+	</script>
+	
+		<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/gprofiles(1).js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/wpgroho(1).js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/twitter-timeline.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/sharing.js"></script>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-tumblr', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-pocket', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "http://jetpack.wordpress.com/jetpack-comment/?blogid=85324395&postid=2869&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=5.4&sig=fbeb7a86ae6e3c10bbae520dcdae6722d9ec3dc0#parent=http%3A%2F%2Fjdh.hamkins.org%2Fmath-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "http://jetpack.wordpress.com/jetpack-comment/?blogid=85324395&postid=2869&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=5.4&sig=fbeb7a86ae6e3c10bbae520dcdae6722d9ec3dc0#parent=http%3A%2F%2Fjdh.hamkins.org%2Fmath-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "http:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script type="text/javascript" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/e-201845.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.4',blog:'85324395',post:'2869',tz:'-5',srv:'jdh.hamkins.org'} ]);
+	_stq.push([ 'clickTrackerInit', '85324395', '2869' ]);
+</script>
+
+
+<div id="sharing_email" style="display: none;">
+		<form action="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed">
+			<script>jQuery( document ).ready( function(){ document.getElementById('jetpack-source_f_name').value = '' });</script>
+			
+			<img style="float: right; display: none" class="loading" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="http://jdh.hamkins.org/math-for-seven-year-olds-graph-coloring-chromatic-numbers-eulerian-paths/#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div><img src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/g.gif" alt=":)" width="6" height="5" id="wpstats"><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/widget_iframe.6a4ed48f02c42484dcac7ad4945520ca.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Math for seven-year-olds_ graph coloring, chromatic numbers, and Eulerian paths and circuits _ Joel David Hamkins_files/saved_resource(4).html"></iframe></body></html>
